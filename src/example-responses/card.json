@@ -1,0 +1,319 @@
+{
+  "cards": [
+    {
+      "name": "Plague Spitter",
+      "manaCost": "{2}{B}",
+      "cmc": 3.0,
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "type": "Creature — Phyrexian Horror",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Phyrexian",
+        "Horror"
+      ],
+      "rarity": "Uncommon",
+      "set": "CLB",
+      "setName": "Commander Legends: Battle for Baldur's Gate",
+      "text": "At the beginning of your upkeep, Plague Spitter deals 1 damage to each creature and each player.\nWhen Plague Spitter dies, Plague Spitter deals 1 damage to each creature and each player.",
+      "artist": "Chippy",
+      "number": "767",
+      "power": "2",
+      "toughness": "2",
+      "layout": "normal",
+      "multiverseid": "567584",
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=567584&type=card",
+      "foreignNames": [
+        {
+          "name": "Seuchenspeier",
+          "text": "Zu Beginn deines Versorgungssegments fügt der Seuchenspeier jeder Kreatur und jedem Spieler 1 Schadenspunkt zu.\nWenn der Seuchenspeier stirbt, fügt er jeder Kreatur und jedem Spieler 1 Schadenspunkt zu.",
+          "type": "Kreatur — Phyrexianer, Schrecken",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=567829&type=card",
+          "language": "German",
+          "multiverseid": 567829
+        },
+        {
+          "name": "Escupidor de peste",
+          "text": "Al comienzo de tu mantenimiento, el Escupidor de peste hace 1 punto de daño a cada criatura y a cada jugador.\nCuando el Escupidor de peste muera, el Escupidor de peste hace 1 punto de daño a cada criatura y a cada jugador.",
+          "type": "Criatura — Horror pirexiano",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=568074&type=card",
+          "language": "Spanish",
+          "multiverseid": 568074
+        },
+        {
+          "name": "Cracheur de peste",
+          "text": "Au début de votre entretien, le Cracheur de peste inflige 1 blessure à chaque créature et à chaque joueur.\nQuand le Cracheur de peste meurt, le Cracheur de peste inflige 1 blessure à chaque créature et à chaque joueur.",
+          "type": "Créature : phyrexian et horreur",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=568319&type=card",
+          "language": "French",
+          "multiverseid": 568319
+        },
+        {
+          "name": "Sputapeste",
+          "text": "All'inizio del tuo mantenimento, lo Sputapeste infligge 1 danno a ogni creatura e a ogni giocatore.\nQuando lo Sputapeste muore, infligge 1 danno a ogni creatura e a ogni giocatore.",
+          "type": "Creatura — Orrore Phyrexiano",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=568564&type=card",
+          "language": "Italian",
+          "multiverseid": 568564
+        },
+        {
+          "name": "疫病吐き",
+          "text": "あなたのアップキープの開始時に、疫病吐きは各クリーチャーと各プレイヤーにそれぞれ１点のダメージを与える。\n疫病吐きが死亡したとき、疫病吐きは各クリーチャーと各プレイヤーにそれぞれ１点のダメージを与える。",
+          "type": "クリーチャー — ファイレクシアン・ホラー",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=568809&type=card",
+          "language": "Japanese",
+          "multiverseid": 568809
+        },
+        {
+          "name": "Cuspidor de Pragas",
+          "text": "No início de sua manutenção, Cuspidor de Pragas causa 1 ponto de dano a cada criatura e cada jogador.\nQuando Cuspidor de Pragas morre, Cuspidor de Pragas causa 1 ponto de dano a cada criatura e cada jogador.",
+          "type": "Criatura — Phyrexiano Horror",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=569054&type=card",
+          "language": "Portuguese (Brazil)",
+          "multiverseid": 569054
+        },
+        {
+          "name": "Изрыгатель Чумы",
+          "text": "В начале вашего шага поддержки Изрыгатель Чумы наносит 1 повреждение каждому существу и каждому игроку.\nКогда Изрыгатель Чумы умирает, Изрыгатель Чумы наносит 1 повреждение каждому существу и каждому игроку.",
+          "type": "Существо — Фирексиец Ужас",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=569299&type=card",
+          "language": "Russian",
+          "multiverseid": 569299
+        },
+        {
+          "name": "瘟疫喷兽",
+          "text": "在你的维持开始时，瘟疫喷兽对每个生物和每位牌手各造成1点伤害。\n当瘟疫喷兽死去时，瘟疫喷兽对每个生物和每位牌手各造成1点伤害。",
+          "type": "生物 ～非瑞人／惊惧兽",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=569544&type=card",
+          "language": "Chinese Simplified",
+          "multiverseid": 569544
+        },
+        {
+          "name": "瘟疫噴獸",
+          "text": "在你的維持開始時，瘟疫噴獸對每個生物和每位玩家各造成1點傷害。\n當瘟疫噴獸死去時，瘟疫噴獸對每個生物和每位玩家各造成1點傷害。",
+          "type": "生物 ～非瑞人／驚懼獸",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=569789&type=card",
+          "language": "Chinese Traditional",
+          "multiverseid": 569789
+        }
+      ],
+      "printings": [
+        "CLB",
+        "INV",
+        "WC01"
+      ],
+      "originalText": "At the beginning of your upkeep, Plague Spitter deals 1 damage to each creature and each player.\nWhen Plague Spitter dies, Plague Spitter deals 1 damage to each creature and each player.",
+      "originalType": "Creature — Phyrexian Horror",
+      "legalities": [
+        {
+          "format": "Commander",
+          "legality": "Legal"
+        },
+        {
+          "format": "Duel",
+          "legality": "Legal"
+        },
+        {
+          "format": "Legacy",
+          "legality": "Legal"
+        },
+        {
+          "format": "Paupercommander",
+          "legality": "Restricted"
+        },
+        {
+          "format": "Premodern",
+          "legality": "Legal"
+        },
+        {
+          "format": "Vintage",
+          "legality": "Legal"
+        }
+      ],
+      "id": "c31ecb4c-f0b9-5451-8d75-051fb34bc788"
+    },
+    {
+      "name": "Plague Spitter",
+      "manaCost": "{2}{B}",
+      "cmc": 3.0,
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "type": "Creature — Phyrexian Horror",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Phyrexian",
+        "Horror"
+      ],
+      "rarity": "Uncommon",
+      "set": "INV",
+      "setName": "Invasion",
+      "text": "At the beginning of your upkeep, Plague Spitter deals 1 damage to each creature and each player.\nWhen Plague Spitter dies, Plague Spitter deals 1 damage to each creature and each player.",
+      "artist": "Chippy",
+      "number": "119",
+      "power": "2",
+      "toughness": "2",
+      "layout": "normal",
+      "multiverseid": "23021",
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=23021&type=card",
+      "foreignNames": [
+        {
+          "name": "Seuchenspeier",
+          "text": "Zu Beginn Deines Versorgungssegments fügt der Seuchenspeier jeder Kreatur und jedem Spieler 1 Schadenspunkt zu.\nWenn der Seuchenspeier aus dem Spiel auf den Friedhof geht, fügt er jeder Kreatur und jedem Spieler 1 Schadenspunkt zu.",
+          "type": "Kreatur — Schrecken",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=183537&type=card",
+          "language": "German",
+          "multiverseid": 183537
+        },
+        {
+          "name": "Escupidor de peste",
+          "flavor": null,
+          "language": "Spanish",
+          "multiverseid": null
+        },
+        {
+          "name": "Cracheur de peste",
+          "text": "Au début de votre entretien, le Cracheur de peste inflige 1 blessure à chaque créature et à chaque joueur.\nQuand le Cracheur de peste est mis dans un cimetière depuis le jeu, le Cracheur de peste inflige 1 blessure à chaque créature et à chaque joueur.",
+          "type": "Créature : horreur",
+          "flavor": null,
+          "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=185411&type=card",
+          "language": "French",
+          "multiverseid": 185411
+        },
+        {
+          "name": "Sputapeste",
+          "flavor": null,
+          "language": "Italian",
+          "multiverseid": null
+        },
+        {
+          "name": "疫病吐き",
+          "flavor": null,
+          "language": "Japanese",
+          "multiverseid": null
+        },
+        {
+          "name": "Cuspidor de Pragas",
+          "flavor": null,
+          "language": "Portuguese (Brazil)",
+          "multiverseid": null
+        }
+      ],
+      "printings": [
+        "CLB",
+        "INV",
+        "WC01"
+      ],
+      "originalText": "At the beginning of your upkeep, Plague Spitter deals 1 damage to each creature and each player.\nWhen Plague Spitter is put into a graveyard from play, Plague Spitter deals 1 damage to each creature and each player.",
+      "originalType": "Creature - Horror",
+      "legalities": [
+        {
+          "format": "Commander",
+          "legality": "Legal"
+        },
+        {
+          "format": "Duel",
+          "legality": "Legal"
+        },
+        {
+          "format": "Legacy",
+          "legality": "Legal"
+        },
+        {
+          "format": "Paupercommander",
+          "legality": "Restricted"
+        },
+        {
+          "format": "Premodern",
+          "legality": "Legal"
+        },
+        {
+          "format": "Vintage",
+          "legality": "Legal"
+        }
+      ],
+      "id": "371b6df9-312e-5118-99a9-4f3e2ce4ab9f"
+    },
+    {
+      "name": "Plague Spitter",
+      "manaCost": "{2}{B}",
+      "cmc": 3.0,
+      "colors": [
+        "B"
+      ],
+      "colorIdentity": [
+        "B"
+      ],
+      "type": "Creature — Phyrexian Horror",
+      "types": [
+        "Creature"
+      ],
+      "subtypes": [
+        "Phyrexian",
+        "Horror"
+      ],
+      "rarity": "Uncommon",
+      "set": "WC01",
+      "setName": "World Championship Decks 2001",
+      "text": "At the beginning of your upkeep, Plague Spitter deals 1 damage to each creature and each player.\nWhen Plague Spitter dies, Plague Spitter deals 1 damage to each creature and each player.",
+      "artist": "Chippy",
+      "number": "tvdl119",
+      "power": "2",
+      "toughness": "2",
+      "layout": "normal",
+      "printings": [
+        "CLB",
+        "INV",
+        "WC01"
+      ],
+      "legalities": [
+        {
+          "format": "Commander",
+          "legality": "Legal"
+        },
+        {
+          "format": "Duel",
+          "legality": "Legal"
+        },
+        {
+          "format": "Legacy",
+          "legality": "Legal"
+        },
+        {
+          "format": "Paupercommander",
+          "legality": "Restricted"
+        },
+        {
+          "format": "Premodern",
+          "legality": "Legal"
+        },
+        {
+          "format": "Vintage",
+          "legality": "Legal"
+        }
+      ],
+      "id": "bf2ddaed-e869-5b3e-8ab0-677043d98d1f"
+    }
+  ]
+}
