@@ -1,9 +1,9 @@
-import { Card } from "./types";
+import { CardWithImage } from "./types";
 import React from "react";
 import { generatePdf } from "./pdf";
 
 interface Props {
-  cards: Card[];
+  cards: CardWithImage[];
 }
 
 export const CardSelection = ({ cards }: Props) => {
@@ -17,12 +17,8 @@ export const CardSelection = ({ cards }: Props) => {
       <button onClick={handleRenderPdf}>Download PDF</button>
 
       {cards.length === 0 && <div>No cards selected</div>}
-      {cards.map((card: Card) => {
-        return (
-          <div key={card.name}>
-            <img alt="asdf" src={card.imageUrl} />
-          </div>
-        );
+      {cards.map((card: CardWithImage) => {
+        return <div key={card.name}>{card.name}</div>;
       })}
     </>
   );

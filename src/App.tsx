@@ -11,14 +11,16 @@ import {
 import { LeftPanel } from "./components/LeftPanel";
 import { RightPanel } from "./components/RightPanel";
 import { useLocalStorage } from "./components/LocalStorageHook";
-import { Card, WizardsResponse } from "./components/types";
+import { Card, CardWithImage, WizardsResponse } from "./components/types";
 import { CardSelection } from "./components/CardSelection";
 
 function App() {
   const [searchValue, setSearchValue] = useState<string>("plague spitter");
   const [cards, setCards] = useState<RemoteData<Error, Card[]>>(initial);
-  const [selectedCards, setSelectedCards]: [Card[], (cards: Card[]) => void] =
-    useLocalStorage<Card[]>("mtg-cards", []);
+  const [selectedCards, setSelectedCards]: [
+    CardWithImage[],
+    (cards: CardWithImage[]) => void
+  ] = useLocalStorage<CardWithImage[]>("mtg-cards", []);
 
   const handleSearch = async () => {
     setCards(pending);
@@ -49,7 +51,7 @@ function App() {
         </button>
         <ViewSearchResult
           searchResult={cards}
-          selectCard={(card: Card) => {
+          selectCard={(card: CardWithImage) => {
             setSelectedCards([card, ...selectedCards]);
           }}
         />

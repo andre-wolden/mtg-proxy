@@ -1,4 +1,4 @@
-import { Card } from "./types";
+import { Card, CardWithImage } from "./types";
 import React, { useEffect, useState } from "react";
 import {
   isInitial,
@@ -14,9 +14,10 @@ import { ClipLoader } from "react-spinners";
 
 interface Props {
   card: Card;
+  selectCard: (card: CardWithImage) => void;
 }
 
-export const ViewCard = ({ card }: Props) => {
+export const ViewCardSearchResult = ({ card, selectCard }: Props) => {
   const imgId = card.imageUrl;
 
   const [image, setImage] = useState<RemoteData<Error, ArrayBuffer>>(initial);
@@ -39,7 +40,7 @@ export const ViewCard = ({ card }: Props) => {
       // @ts-ignore
       img.onload = (e) => URL.revokeObjectURL(url);
     }
-  });
+  }, [image, card.imageUrl, imgId]);
 
   return (
     <div>
@@ -47,9 +48,13 @@ export const ViewCard = ({ card }: Props) => {
         {isPending(image) && <ClipLoader />}
         <img hidden={!isSuccess(image)} id={imgId} alt="sadf" />
       </div>
-      <button onClick={() => console.log("select card")}>
-        Add {card.name}
-      </button>
+      {isSuccess(image) && (
+        <button
+          onClick={() => selectCard({ name: card.name, image: image.value })}
+        >
+          Add {card.name}
+        </button>
+      )}
     </div>
   );
 };
