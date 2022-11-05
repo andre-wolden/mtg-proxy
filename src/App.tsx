@@ -28,7 +28,12 @@ function App() {
     fetch(`https://api.magicthegathering.io/v1/cards?name=${searchValue}`)
       .then((res) => res.json())
       .then((res: WizardsResponse) => {
-        setCards(success(res.cards.map(card => ({name: card.name, imageUrl: card.imageUrl, image: initial}))))
+
+        const cards = res.cards
+          .filter(card => card.imageUrl !== undefined)
+          .map(card => ({name: card.name, imageUrl: card.imageUrl, image: initial}))
+
+        setCards(success(cards))
       })
       .catch((e) => {
         console.log(e)

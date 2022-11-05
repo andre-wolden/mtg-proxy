@@ -1,7 +1,8 @@
 import {Card} from "./types";
 import React, {useEffect} from "react";
-import {isInitial, isSuccess, pending, success} from "@devexperts/remote-data-ts";
+import {isInitial, isPending, isSuccess, pending, success} from "@devexperts/remote-data-ts";
 import {wizardsPath} from "./utils";
+import {ClipLoader} from "react-spinners";
 
 interface Props {
   card: Card;
@@ -34,13 +35,21 @@ export const ViewCard = ({card, index, updateCard}: Props) => {
   })
 
   return (
-    <div key={card.name}>
+    <div>
+      <div className="card" key={card.name}>
+
+        {
+          isPending(card.image) && (
+            <ClipLoader />
+          )
+        }
+        <img hidden={!isSuccess(card.image)} id={imgId} alt="sadf" />
+      </div>
       <button
         onClick={() => console.log("select card")}
       >
         Add {card.name}
       </button>
-      <img id={imgId} alt="sadf" />
     </div>
   );
 }

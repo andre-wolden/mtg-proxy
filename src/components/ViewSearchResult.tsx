@@ -28,6 +28,8 @@ export const ViewSearchResult = ({ searchResult, selectCard, updateCards }: Prop
     () => <div>Not asked</div>,
     () => <div>Loading</div>,
     (e) => <div>Error: {JSON.stringify(e)}</div>,
-    (cards: Card[]) => <div>{showResult([cards[0]])}</div>
+    (cards: Card[]) => {
+      return <div>{showResult(cards)}</div>;
+    }
   )(searchResult);
 };
