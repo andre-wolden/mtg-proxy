@@ -1,7 +1,6 @@
 import { Card } from "./types";
 import React from "react";
-import {generatePdf} from "./pdf";
-
+import { generatePdf } from "./pdf";
 
 interface Props {
   cards: Card[];
@@ -9,7 +8,7 @@ interface Props {
 
 export const CardSelection = ({ cards }: Props) => {
   const handleRenderPdf = () => {
-    generatePdf(cards)
+    generatePdf(cards);
   };
 
   return (

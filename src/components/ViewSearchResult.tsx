@@ -1,7 +1,7 @@
 import React from "react";
 import { fold, RemoteData } from "@devexperts/remote-data-ts";
-import {Card} from "./types";
-import {ViewCard} from "./ViewCard";
+import { Card } from "./types";
+import { ViewCard } from "./ViewCard";
 
 interface Props {
   searchResult: RemoteData<Error, Card[]>;
@@ -11,10 +11,7 @@ interface Props {
 export const ViewSearchResult = ({ searchResult, selectCard }: Props) => {
   const showResult = (cards: Card[]) => {
     return cards.map((card: Card, index: number) => (
-      <ViewCard
-        key={index}
-        card={card}
-      />
+      <ViewCard key={index} card={card} />
     ));
   };
 

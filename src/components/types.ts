@@ -9,5 +9,5 @@ export interface CardWithImage {
 }
 
 export type WizardsResponse = {
-  cards: Card[]
-}
+  cards: Card[];
+};
