@@ -1,6 +1,7 @@
 import { CardWithImage } from "./types";
 import React from "react";
 import { generatePdf } from "./pdf";
+import { ViewCard } from "./ViewCard";
 
 interface Props {
   cards: CardWithImage[];
@@ -18,7 +19,11 @@ export const CardSelection = ({ cards }: Props) => {
 
       {cards.length === 0 && <div>No cards selected</div>}
       {cards.map((card: CardWithImage) => {
-        return <div key={card.name}>{card.name}</div>;
+        return (
+          <div key={card.name}>
+            <ViewCard card={card} />
+          </div>
+        );
       })}
     </>
   );
