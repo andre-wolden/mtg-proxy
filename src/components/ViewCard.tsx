@@ -1,29 +1,29 @@
 import {Card} from "./types";
-import React, {useEffect} from "react";
-import {isInitial, isPending, isSuccess, pending, success} from "@devexperts/remote-data-ts";
+import React, {useEffect, useState} from "react";
+import {isInitial, isPending, isSuccess, initial, pending, RemoteData, success} from "@devexperts/remote-data-ts";
 import {wizardsPath} from "./utils";
 import {ClipLoader} from "react-spinners";
 
 interface Props {
   card: Card;
-  index: number;
-  updateCard: (card: Card) => void;
 }
 
-export const ViewCard = ({card, index, updateCard}: Props) => {
+export const ViewCard = ({card}: Props) => {
 
-  const imgId = `${card.name}-${index}`
+  const imgId = card.imageUrl
+
+  const [image, setImage] = useState<RemoteData<Error, ArrayBuffer>>(initial)
 
   useEffect(() => {
-    if (isInitial(card.image)){
-      updateCard(({...card, image: pending}))
+    if (isInitial(image)){
+      setImage(pending)
       fetch(wizardsPath(card.imageUrl))
         .then(res => res.arrayBuffer())
-        .then(arrayBuffer => updateCard(({...card, image: success(arrayBuffer)})))
+        .then(arrayBuffer => setImage(success(arrayBuffer)))
     }
 
-    if (isSuccess(card.image)){
-      const blob = new Blob( [ card.image.value ] );
+    if (isSuccess(image)){
+      const blob = new Blob( [ image.value ] );
       const url = URL.createObjectURL( blob );
       const img = document.getElementById( imgId );
       // @ts-ignore
@@ -39,11 +39,11 @@ export const ViewCard = ({card, index, updateCard}: Props) => {
       <div className="card" key={card.name}>
 
         {
-          isPending(card.image) && (
+          isPending(image) && (
             <ClipLoader />
           )
         }
-        <img hidden={!isSuccess(card.image)} id={imgId} alt="sadf" />
+        <img hidden={!isSuccess(image)} id={imgId} alt="sadf" />
       </div>
       <button
         onClick={() => console.log("select card")}

@@ -31,12 +31,12 @@ function App() {
 
         const cards = res.cards
           .filter(card => card.imageUrl !== undefined)
-          .map(card => ({name: card.name, imageUrl: card.imageUrl, image: initial}))
+          .map(card => ({name: card.name, imageUrl: card.imageUrl}))
 
         setCards(success(cards))
       })
       .catch((e) => {
-        console.log(e)
+        console.log(`error = ${e}`)
       });
   };
 
@@ -55,9 +55,6 @@ function App() {
           searchResult={cards}
           selectCard={(card: Card) => {
             setSelectedCards([card, ...selectedCards]);
-          }}
-          updateCards={(updatedCards: Card[]) => {
-            setCards(success(updatedCards))
           }}
         />
       </LeftPanel>

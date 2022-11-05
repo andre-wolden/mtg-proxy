@@ -1,9 +1,11 @@
-import {RemoteData} from "@devexperts/remote-data-ts";
-
 export interface Card {
   name: string;
   imageUrl: string;
-  image: RemoteData<Error, ArrayBuffer>;
+}
+
+export interface CardWithImage {
+  name: string;
+  image: ArrayBuffer;
 }
 
 export type WizardsResponse = {

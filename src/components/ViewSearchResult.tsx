@@ -6,20 +6,14 @@ import {ViewCard} from "./ViewCard";
 interface Props {
   searchResult: RemoteData<Error, Card[]>;
   selectCard: (card: Card) => void;
-  updateCards: (cards: Card[]) => void;
 }
 
-export const ViewSearchResult = ({ searchResult, selectCard, updateCards }: Props) => {
+export const ViewSearchResult = ({ searchResult, selectCard }: Props) => {
   const showResult = (cards: Card[]) => {
     return cards.map((card: Card, index: number) => (
       <ViewCard
+        key={index}
         card={card}
-        index={index}
-        updateCard={(updatedCard: Card) => {
-          const updatedCards = [...cards]
-          updatedCards[index] = updatedCard
-          updateCards(updatedCards)
-        }}
       />
     ));
   };
