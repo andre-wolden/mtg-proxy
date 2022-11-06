@@ -4,8 +4,14 @@ export interface Card {
 }
 
 export interface CardWithImage {
+  id: string;
   name: string;
   image: ArrayBuffer;
+}
+
+export interface CardWithoutImage {
+  id: string;
+  name: string;
 }
 
 export type WizardsResponse = {

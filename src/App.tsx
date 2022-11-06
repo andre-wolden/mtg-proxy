@@ -13,14 +13,17 @@ import { RightPanel } from "./components/RightPanel";
 import { useLocalStorage } from "./components/LocalStorageHook";
 import { Card, CardWithImage, WizardsResponse } from "./components/types";
 import { CardSelection } from "./components/CardSelection";
+import { useCardStorage } from "./components/CardStorageHook";
 
 function App() {
   const [searchValue, setSearchValue] = useState<string>("plague spitter");
   const [cards, setCards] = useState<RemoteData<Error, Card[]>>(initial);
-  const [selectedCards, setSelectedCards]: [
-    CardWithImage[],
-    (cards: CardWithImage[]) => void
-  ] = useLocalStorage<CardWithImage[]>("mtg-cards", []);
+  // const [selectedCards, setSelectedCards]: [
+  //   CardWithImage[],
+  //   (cards: CardWithImage[]) => void
+  // ] = useLocalStorage<CardWithImage[]>("mtg-cards", []);
+
+  const [selectedCards, setSelectedCards] = useCardStorage();
 
   const handleSearch = async () => {
     setCards(pending);
@@ -51,14 +54,15 @@ function App() {
         </button>
         <ViewSearchResult
           searchResult={cards}
-          selectCard={(card: CardWithImage) => {
-            setSelectedCards([card, ...selectedCards]);
+          selectCard={async (card: CardWithImage) => {
+            const currentlySelectedCards: CardWithImage[] = await selectedCards;
+            setSelectedCards([card, ...currentlySelectedCards]);
           }}
         />
       </LeftPanel>
       <RightPanel>
         <>
-          <CardSelection cards={selectedCards} />
+          <CardSelection cardsPromise={selectedCards} />
         </>
       </RightPanel>
     </div>

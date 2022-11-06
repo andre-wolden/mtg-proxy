@@ -11,6 +11,7 @@ import {
 } from "@devexperts/remote-data-ts";
 import { wizardsPath } from "./utils";
 import { ClipLoader } from "react-spinners";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   card: Card;
@@ -18,7 +19,7 @@ interface Props {
 }
 
 export const ViewCardSearchResult = ({ card, selectCard }: Props) => {
-  const imgId = card.imageUrl;
+  const imgId = uuidv4();
 
   const [image, setImage] = useState<RemoteData<Error, ArrayBuffer>>(initial);
 
@@ -50,7 +51,9 @@ export const ViewCardSearchResult = ({ card, selectCard }: Props) => {
       </div>
       {isSuccess(image) && (
         <button
-          onClick={() => selectCard({ name: card.name, image: image.value })}
+          onClick={() =>
+            selectCard({ id: imgId, name: card.name, image: image.value })
+          }
         >
           Add {card.name}
         </button>
