@@ -1,16 +1,16 @@
 import React from "react";
 import { fold, RemoteData } from "@devexperts/remote-data-ts";
-import { Card, CardWithImage } from "./types";
+import { ApiCard, Card } from "./types";
 import { ViewCardSearchResult } from "./ViewCardSearchResult";
 
 interface Props {
-  searchResult: RemoteData<Error, Card[]>;
-  selectCard: (card: CardWithImage) => void;
+  searchResult: RemoteData<Error, ApiCard[]>;
+  selectCard: (card: Card) => void;
 }
 
 export const ViewSearchResult = ({ searchResult, selectCard }: Props) => {
-  const showResult = (cards: Card[]) => {
-    return cards.map((card: Card, index: number) => (
+  const showResult = (cards: ApiCard[]) => {
+    return cards.map((card: ApiCard, index: number) => (
       <ViewCardSearchResult key={index} card={card} selectCard={selectCard} />
     ));
   };
@@ -19,7 +19,7 @@ export const ViewSearchResult = ({ searchResult, selectCard }: Props) => {
     () => <div>Not asked</div>,
     () => <div>Loading</div>,
     (e) => <div>Error: {JSON.stringify(e)}</div>,
-    (cards: Card[]) => {
+    (cards: ApiCard[]) => {
       return <div>{showResult(cards)}</div>;
     }
   )(searchResult);

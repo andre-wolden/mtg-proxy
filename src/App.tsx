@@ -11,22 +11,19 @@ import {
 import { LeftPanel } from "./components/LeftPanel";
 import { RightPanel } from "./components/RightPanel";
 import { useLocalStorage } from "./components/LocalStorageHook";
-import { Card, CardWithImage, WizardsResponse } from "./components/types";
+import { ApiCard, Card, WizardsResponse } from "./components/types";
 import { CardSelection } from "./components/CardSelection";
-import { useCardStorage } from "./components/CardStorageHook";
+import { useCardSelection } from "./components/CardSelectionHook";
 
 function App() {
   const [searchValue, setSearchValue] = useState<string>("plague spitter");
-  const [cards, setCards] = useState<RemoteData<Error, Card[]>>(initial);
-  // const [selectedCards, setSelectedCards]: [
-  //   CardWithImage[],
-  //   (cards: CardWithImage[]) => void
-  // ] = useLocalStorage<CardWithImage[]>("mtg-cards", []);
+  const [searchResult, setSearchResult] =
+    useState<RemoteData<Error, ApiCard[]>>(initial);
 
-  const [selectedCards, setSelectedCards] = useCardStorage();
+  const cardSelectionClient = useCardSelection();
 
   const handleSearch = async () => {
-    setCards(pending);
+    setSearchResult(pending);
     fetch(`https://api.magicthegathering.io/v1/cards?name=${searchValue}`)
       .then((res) => res.json())
       .then((res: WizardsResponse) => {
@@ -34,7 +31,7 @@ function App() {
           .filter((card) => card.imageUrl !== undefined)
           .map((card) => ({ name: card.name, imageUrl: card.imageUrl }));
 
-        setCards(success(cards));
+        setSearchResult(success(cards));
       })
       .catch((e) => {
         console.log(`error = ${e}`);
@@ -49,20 +46,19 @@ function App() {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <button disabled={isPending(cards)} onClick={handleSearch}>
+        <button disabled={isPending(searchResult)} onClick={handleSearch}>
           Search
         </button>
         <ViewSearchResult
-          searchResult={cards}
-          selectCard={async (card: CardWithImage) => {
-            const currentlySelectedCards: CardWithImage[] = await selectedCards;
-            setSelectedCards([card, ...currentlySelectedCards]);
+          searchResult={searchResult}
+          selectCard={async (card: Card) => {
+            cardSelectionClient.add(card)();
           }}
         />
       </LeftPanel>
       <RightPanel>
         <>
-          <CardSelection cardsPromise={selectedCards} />
+          <CardSelection cards={cardSelectionClient.cards} />
         </>
       </RightPanel>
     </div>

@@ -1,9 +1,9 @@
-import { CardWithImage } from "./types";
+import { Card } from "./types";
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
-  card: CardWithImage;
+  card: Card;
 }
 
 export const ViewCard = ({ card }: Props) => {

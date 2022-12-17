@@ -1,7 +1,7 @@
-import { CardWithImage } from "./types";
+import { Card } from "./types";
 import jsPDF, { ImageOptions } from "jspdf";
 
-export const generatePdf = async (cards: CardWithImage[]) => {
+export const generatePdf = async (cards: Card[]) => {
   const doc = new jsPDF();
 
   if (cards && cards[0]) {

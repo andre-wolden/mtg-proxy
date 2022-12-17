@@ -1,9 +1,11 @@
-export interface Card {
+import { RemoteData } from "@devexperts/remote-data-ts";
+
+export interface ApiCard {
   name: string;
   imageUrl: string;
 }
 
-export interface CardWithImage {
+export interface Card {
   id: string;
   name: string;
   image: ArrayBuffer;
@@ -15,5 +17,5 @@ export interface CardWithoutImage {
 }
 
 export type WizardsResponse = {
-  cards: Card[];
+  cards: ApiCard[];
 };

@@ -1,4 +1,4 @@
-import { Card, CardWithImage } from "./types";
+import { ApiCard, Card } from "./types";
 import React, { useEffect, useState } from "react";
 import {
   isInitial,
@@ -14,8 +14,8 @@ import { ClipLoader } from "react-spinners";
 import { v4 as uuidv4 } from "uuid";
 
 interface Props {
-  card: Card;
-  selectCard: (card: CardWithImage) => void;
+  card: ApiCard;
+  selectCard: (card: Card) => void;
 }
 
 export const ViewCardSearchResult = ({ card, selectCard }: Props) => {
