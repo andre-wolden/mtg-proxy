@@ -42,8 +42,10 @@ export const generatePdf = async (cards: Card[]) => {
       y,
     };
     doc.addImage(imageOptions);
+    doc.setFontSize(8);
+    doc.setTextColor("#7262c0");
+    doc.text("PROXY", x + 40, y + 53);
   });
 
-  doc.text("TODO: Add proxy symbol!", 10, 10);
   doc.save("proxy-cards.pdf");
 };
