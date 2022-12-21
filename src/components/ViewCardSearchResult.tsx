@@ -43,6 +43,9 @@ export const ViewCardSearchResult = ({ card, selectCard }: Props) => {
     }
   }, [image, card.imageUrl, imgId]);
 
+  console.log("about to fetch image from:");
+  console.log(card.imageUrl);
+
   return (
     <div>
       <div className="card" key={card.name}>

@@ -11,7 +11,12 @@ import {
 import { LeftPanel } from "./components/LeftPanel";
 import { RightPanel } from "./components/RightPanel";
 import { useLocalStorage } from "./components/LocalStorageHook";
-import { ApiCard, Card, WizardsResponse } from "./components/types";
+import {
+  ApiCard,
+  Card,
+  ScryfallResponse,
+  WizardsResponse,
+} from "./components/types";
 import { CardSelection } from "./components/CardSelection";
 import { useCardSelection } from "./components/CardSelectionHook";
 
@@ -38,6 +43,17 @@ function App() {
       });
   };
 
+  const handleScryfallSearch = async () => {
+    setSearchResult(pending);
+    fetch(`https://api.scryfall.com/cards/named?fuzzy=${searchValue}`)
+      .then((res) => res.json())
+      .then((res: ScryfallResponse) => {
+        setSearchResult(
+          success([{ name: res.name, imageUrl: res.image_uris.large }])
+        );
+      });
+  };
+
   return (
     <div className="wrapper">
       <LeftPanel>
@@ -46,7 +62,10 @@ function App() {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <button disabled={isPending(searchResult)} onClick={handleSearch}>
+        <button
+          disabled={isPending(searchResult)}
+          onClick={handleScryfallSearch}
+        >
           Search
         </button>
         <ViewSearchResult

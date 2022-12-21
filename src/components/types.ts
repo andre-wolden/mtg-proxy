@@ -19,3 +19,10 @@ export interface CardWithoutImage {
 export type WizardsResponse = {
   cards: ApiCard[];
 };
+
+export interface ScryfallResponse {
+  name: string;
+  image_uris: {
+    large: string;
+  };
+}
