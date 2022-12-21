@@ -50,7 +50,12 @@ export const ViewCardSearchResult = ({ card, selectCard }: Props) => {
     <div>
       <div className="card" key={card.name}>
         {isPending(image) && <ClipLoader />}
-        <img hidden={!isSuccess(image)} id={imgId} alt="sadf" />
+        <img
+          className="cardImage"
+          hidden={!isSuccess(image)}
+          id={imgId}
+          alt="sadf"
+        />
       </div>
       {isSuccess(image) && (
         <button

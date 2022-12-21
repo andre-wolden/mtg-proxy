@@ -25,7 +25,7 @@ export const ViewCard = ({ card }: Props) => {
 
   return (
     <div className="card" key={card.name}>
-      <img hidden={hidden} id={imgId} alt="sadf" />
+      <img className="cardImage" hidden={hidden} id={imgId} alt="sadf" />
     </div>
   );
 };
